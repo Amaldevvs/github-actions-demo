@@ -1,0 +1,26 @@
+---
+name: "Simple Github Actions WorkFlow Script"
+on:
+  push:
+    branches:
+      - master
+      - main
+
+jobs:
+  image-build-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Date Command"
+        run: date
+
+      - name: "Getting Os Details"
+        run: cat /etc/os-release
+
+      - name: "Getting Memory Details"
+        rum: free -m
+
+      - name: "Current Working Directory And its Contents"
+        run: |
+          pwd
+          ls -al
+
